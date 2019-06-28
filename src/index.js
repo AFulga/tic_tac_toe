@@ -4,28 +4,18 @@ import './index.css';
 //import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-class ShoppingList extends React.Component {
-    render() {
-        return (
-            <div className="shoping-list">
-                <h1>Shopping list for {this.props.name}</h1>
-                <ul>
-                    <li>Instagram</li>
-                    <li>WhatsApp</li>
-                    <li>Oculus</li>
-                </ul>
-            </div>
-        );
-    }
-}
-
 class Square extends React.Component {
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: null
+        }
+    }
+    setChangeVal = () => this.setState({value: 'X'})
     render() {
         return (
-            <button className="square" onClick={() => {console.log(this.sate);
-            ('click');}}>
-                {this.props.value}
+            <button className="square" onClick={this.setChangeVal}>
+                {this.state.value}
             </button>
         );
     }
